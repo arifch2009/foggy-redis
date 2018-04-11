@@ -18,16 +18,11 @@ func main() {
 	defer pubsub.Close()
 
 	// Wait for subscription to be created before publishing message.
-	subscr, err := pubsub.ReceiveTimeout(time.Second)
+	subscr, err := pubsub.ReceiveTimeout(time.Second) 
 	if err != nil {
 		panic(err)
 	}
 	fmt.Println(subscr)
-
-	err = client.Publish("mychannel1", "hello").Err()
-	if err != nil {
-		panic(err)
-	}
 
 	msg, err := pubsub.ReceiveMessage()
 	if err != nil {
@@ -38,3 +33,4 @@ func main() {
 	// Output: subscribe: mychannel1
 	// mychannel1 hello
 }
+
