@@ -17,3 +17,6 @@ func main() {
 	// Output: PONG <nil>
 }
 
+This text is written in Emacs
+This text is written in Emacs
+
